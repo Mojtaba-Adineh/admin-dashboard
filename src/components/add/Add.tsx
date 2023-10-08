@@ -13,7 +13,7 @@ type Props = {
 const Add = ({ urlQuery, columns, setOpen }: Props) => {
   const queryClient = useQueryClient();
 
-  const [userInfo , setUserinfo] = useState({
+  const userInfo = {
     id : Math.floor(Math.random() * 1000),  
     img : "",
     lastName : "adineh",
@@ -22,7 +22,7 @@ const Add = ({ urlQuery, columns, setOpen }: Props) => {
     phone: "0994-496-6928",
     createdAt : "2015-09-12",
     verified : true
-  })
+  }
 
   const mutation = useMutation({
     mutationFn: async () => {
