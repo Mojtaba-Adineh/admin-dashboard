@@ -15,7 +15,7 @@ type Props = {
 };
 
 const DataTable = ({ columns, rows, urlQuery }: Props) => {
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
   const [userInfo, setUserinfo] = useState({
     id: 123,
     img: "",
@@ -27,17 +27,17 @@ const DataTable = ({ columns, rows, urlQuery }: Props) => {
     verified: true,
   });
 
-  const mutation = useMutation({
-    mutationFn: async (id: number) => {
-      return await axios.delete(`http://localhost:8800/api/${urlQuery}/${id}`);
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries([`all${urlQuery}`]);
-    },
-  });
+  // const mutation = useMutation({
+  //   mutationFn: async (id: number) => {
+  //     return await axios.delete(`http://localhost:8800/api/${urlQuery}/${id}`);
+  //   },
+  //   onSuccess: () => {
+  //     queryClient.invalidateQueries([`all${urlQuery}`]);
+  //   },
+  // });
 
   const handleDelete = (id: number) => {
-    mutation.mutate(id);
+    // mutation.mutate(id);
   };
 
   const actionsColumn: GridColDef = {

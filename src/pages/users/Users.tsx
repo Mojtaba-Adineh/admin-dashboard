@@ -59,13 +59,13 @@ const Users = () => {
     },
   ];
 
-  const {isLoading , data} = useQuery({
-    queryKey : ["allusers"],
-    queryFn : async () => {
-       const res = await axios.get("http://localhost:8800/api/users");
-       return res.data 
-    }
-  })
+  // const {isLoading , data} = useQuery({
+  //   queryKey : ["allusers"],
+  //   queryFn : async () => {
+  //      const res = await axios.get("http://localhost:8800/api/users");
+  //      return res.data 
+  //   }
+  // })
 
   return (
     <div className="users">
@@ -74,7 +74,7 @@ const Users = () => {
         <button onClick={() => setOpen(true)} className="addBtn">Add new User</button>
       </div>
 
-      {isLoading ? <p>Loading...</p> : <DataTable columns={columns} rows={data} urlQuery={"/users"} />}
+      <DataTable columns={columns} rows={userRows} urlQuery={"/users"} />
 
       {open && <Add urlQuery={"user"} columns={columns} setOpen={setOpen}/>}
     </div>
