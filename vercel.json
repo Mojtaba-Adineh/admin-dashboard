@@ -1,24 +1,8 @@
-
 {
-    "version" : 2,
-    "builds" : [
-        {
-            "src" : "*.js" , "use" : "@vercel/node"
-        }
-    ],
-    "routes" : [
-        {
-            "src" :"/(.*)",
-            "dest" : "/"
-        }
-    ]
-}
-
-
-setUserPayoload : () => {
-
-},
-deleteUser : (action , state) => {
-    const email = action.payload;
-    state.employees = state.employees.filter(employee => employee.email !== email)
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
 }
